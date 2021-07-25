@@ -28,11 +28,13 @@ public class Test : MonoBehaviour
         //マジック用の関数
         public void Magic(int mppower)
         {
-            
-                //残りmpを減らす
+            if (this.mp >=5)
+            {
+               //残りmpを減らす
                 this.mp -= mppower;
                 Debug.Log("魔法攻撃をした。残りMPは〇〇");
-            if (this.mp < 5)
+            }
+            else
             {
                 Debug.Log("MPが足りないため、魔法が使えない。");
             }
@@ -60,14 +62,8 @@ public class Test : MonoBehaviour
         }
 
         //配列の要素をすべて逆順に表示する
-        for (int i = 4; i < 5; i--)
+        for (int i = 4; i >=0; i--)
         {
-            //配列の番号が0未満になったら
-            if (i < 0)
-            {
-                //処理を終了する
-                break;
-            }
             Debug.Log(array[i]);
         }
 
@@ -79,11 +75,9 @@ public class Test : MonoBehaviour
         //防御用の関数を呼び出す
         lastboss.Defence(3);
         //マジック用の関数を呼び出す
-        for (int mp =53; mp >= 5; mp -=5)
+        for (int mploop =0; mploop <= 10; mploop ++)
         {
             lastboss.Magic(5);
-
-            
         }
         
     }
